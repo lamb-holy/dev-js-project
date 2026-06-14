@@ -13,3 +13,14 @@ do {
 
 // 3 Етап
 
+var gametype = ""
+
+do{
+    gametype = prompt("Введіть тип видання гри");
+} while (gametype = "deluxe" || "standart");
+
+
+var premiumfeatures = ["+ new skins", "+ 50000 coins", "+ new weapon"];
+
+
+ 
