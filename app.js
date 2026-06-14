@@ -10,3 +10,6 @@ var gameName = "";
 do {
     gameName = prompt("Як називатиметься ваша гра?");
 } while (gameName.length < 2);
+
+// 3 Етап
+
