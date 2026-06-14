@@ -24,3 +24,9 @@ while (isNaN(moneyMoney)) {
 alert(`Ваш бюджет: $${moneyMoney}`);
 
 // термін
+// do {
+//     gameName = prompt("Як називатиметься ваша гра?");
+// } while (gameName.length < 2);
+
+// 3 Етап
+
