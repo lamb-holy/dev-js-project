@@ -1,4 +1,9 @@
 // ЕТАП 1
+var gameFeatures = ["loot boxes", "multiplayer", "story mode"];
+var featuresCost = [200, 600, 400];
+var bugCounts = [12, 45, 8];
+var displayNames = ["Loot Boxes", "Multiplayer", "Story Mode"];
+
 
 
 
@@ -42,14 +47,26 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-var gametype = ""
+var gametype = prompt("Введіть тип видання гри")
 
-do{
-    gametype = prompt("Введіть тип видання гри");
-} while (gametype = "deluxe" || "standart");
+switch(gametype) {
+    case "deluxe":
+        gameFeatures.concat(premiumfeatures);
+        featuresCost.concat(premiumFeaturesCost);
+        bugCounts.concat(premiumBugs);
+        displayNames.concat(premiumNames)
+    break;
 
+    case "standart":
+    break;
+    default: 
+    alert("Ви ввели неправильий тип гри")
+}
 
-var premiumfeatures = ["+ new skins", "+ 50000 coins", "+ new weapon"];
+var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
+var premiumFeaturesCost = [200, 400, 300]
+var premiumBugs = [4, 2, 50];
+var premiumNames = ["New skins", "50000 coins", "New weapon"];
 
 
 
