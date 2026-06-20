@@ -1,4 +1,8 @@
-// Етап 2
+// ЕТАП 1
+
+
+
+// ЕТАП 2
 
 // назва студії
 var studioName = prompt("Введіть назву вашої GameDev студії");
@@ -10,7 +14,7 @@ while (studioName.length < 3) {
 // назва гри
 var gameName = prompt("Яку гру ви хочете створити?");
 
-while (gameName.length < 2) {
+while (gameName.length < 5) {
     gameName = prompt("Замало символів. Введіть назву гри ще раз.");
 }
 
@@ -24,11 +28,19 @@ while (isNaN(moneyMoney)) {
 alert(`Ваш бюджет: $${moneyMoney}`);
 
 // термін
+var month = Number(prompt("Скільки місяців триватиме створення гри?"));
+
+while (isNaN(month)) {
+    month = Number(prompt("Помилка: використовуйте лише цифри."));
+}
+
+
+
 // do {
 //     gameName = prompt("Як називатиметься ваша гра?");
 // } while (gameName.length < 2);
 
-// 3 Етап
+// ЕТАП 3
 
 var gametype = ""
 
@@ -40,4 +52,11 @@ do{
 var premiumfeatures = ["+ new skins", "+ 50000 coins", "+ new weapon"];
 
 
+
  
+// ЕТАП 4
+
+
+
+
+// ЕТАП 5
