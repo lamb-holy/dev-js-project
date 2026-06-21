@@ -79,20 +79,16 @@ switch(gametype) {
 
  
 // ЕТАП 4
-var index;
+var index = -1;
 
-
-while (true) {
+while (index === -1) {
     var gameFeaturesRow = gameFeatures.join(", ");
-
-    let deleted = prompt(`Видавництво піджимає! Виріжте одну з фіч: ${featureList}`);
-
+    var deleted = prompt(`Видавництво піджимає! Виріжте одну з фіч: ${gameFeaturesRow}`);
     index = gameFeatures.findIndex(feature => feature.toLowerCase() === deleted.toLowerCase());
 
     if (index !== -1) {
         break;
     }
-
     alert("Такої фічі немає!");
 }
 
@@ -104,13 +100,8 @@ console.log(gameFeatures);
 console.log(featuresCost);
 console.log(bugCounts);
 
-// var deleted = gametype.splice(prompt(`Видавництво піджимає! Виріжте одну з фіч: ${gameFeaturesRow}`));
+alert(`У вас залишились: ${gameFeatures.join(", ")}.`);
 
-// if (gameype = "standart", deleted = "loot boxes" || "multiplayer" || "storymode") {
-//     confirm(`Ви вирізали ${deleted}`);
-// } else {
-//     deleted = gametype.splice(toUpperCase(prompt(`Назву введено неправильно або такої неіснує. Виріжте одну з фіч: ${gameFeaturesRow}`)));
-// }
 
 
 
