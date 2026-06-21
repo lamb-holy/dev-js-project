@@ -54,7 +54,16 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-var gametype = prompt("Введіть тип видання гри");
+var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
+var premiumFeaturesCost = [200, 400, 300];
+var premiumBugs = [4, 2, 50];
+var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
+
+var gametype = prompt("Введіть тип видання гри").toLowerCase();
+
+while(gametype !== "deluxe" && gametype !== "standart") {
+        gametype = prompt("Ви ввели неправильний тип гри. Спробуйте ще раз")
+    }
 
 switch(gametype) {
     case "deluxe":
@@ -66,18 +75,7 @@ switch(gametype) {
 
     case "standart":
     break;
-    default: 
-    prompt("Ви ввели неправильний тип гри. Спробуйте ще раз")
 }
-
-// alert("Ви ввели неправильний тип гри")
-
-var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
-var premiumFeaturesCost = [200, 400, 300];
-var premiumBugs = [4, 2, 50];
-var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
-
-
 
  
 // ЕТАП 4
