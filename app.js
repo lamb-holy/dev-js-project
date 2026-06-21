@@ -47,32 +47,63 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-var gametype = prompt("Введіть тип видання гри")
+var gametype = prompt("Введіть тип видання гри");
 
 switch(gametype) {
     case "deluxe":
         gameFeatures.concat(premiumfeatures);
         featuresCost.concat(premiumFeaturesCost);
         bugCounts.concat(premiumBugs);
-        displayNames.concat(premiumNames)
+        displayNames.concat(premiumNames);
     break;
 
     case "standart":
     break;
     default: 
-    alert("Ви ввели неправильний тип гри")
+    alert("Ви ввели неправильний тип гри");
 }
 
 var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
-var premiumFeaturesCost = [200, 400, 300]
+var premiumFeaturesCost = [200, 400, 300];
 var premiumBugs = [4, 2, 50];
-var premiumNames = ["New skins", "50000 coins", "New weapon"];
+var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
 
 
 
  
 // ЕТАП 4
+var index;
 
+
+while (true) {
+    var gameFeaturesRow = gameFeatures.join(", ");
+
+    let deleted = prompt(`Видавництво піджимає! Виріжте одну з фіч: ${featureList}`);
+
+    index = gameFeatures.findIndex(feature => feature.toLowerCase() === deleted.toLowerCase());
+
+    if (index !== -1) {
+        break;
+    }
+
+    alert("Такої фічі немає!");
+}
+
+gameFeatures.splice(index, 1);
+featuresCost.splice(index, 1);
+bugCounts.splice(index, 1);
+
+console.log(gameFeatures);
+console.log(featuresCost);
+console.log(bugCounts);
+
+// var deleted = gametype.splice(prompt(`Видавництво піджимає! Виріжте одну з фіч: ${gameFeaturesRow}`));
+
+// if (gameype = "standart", deleted = "loot boxes" || "multiplayer" || "storymode") {
+//     confirm(`Ви вирізали ${deleted}`);
+// } else {
+//     deleted = gametype.splice(toUpperCase(prompt(`Назву введено неправильно або такої неіснує. Виріжте одну з фіч: ${gameFeaturesRow}`)));
+// }
 
 
 
