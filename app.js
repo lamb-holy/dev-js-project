@@ -60,7 +60,7 @@ switch(gametype) {
     case "standart":
     break;
     default: 
-    alert("Ви ввели неправильий тип гри")
+    alert("Ви ввели неправильний тип гри")
 }
 
 var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
