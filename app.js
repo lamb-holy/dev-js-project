@@ -4,7 +4,14 @@ var featuresCost = [200, 600, 400];
 var bugCounts = [12, 45, 8];
 var displayNames = ["Loot Boxes", "Multiplayer", "Story Mode"];
 
-
+for(let i = 0; i < bugCounts.length; i++) {
+    if(bugCounts[i] > 30) {
+        gameFeatures.slice(i, 1)
+        featuresCost.slice(i, 1)
+        bugCounts.slice(i, 1)
+        displayNames.slice(i, 1)
+    }
+}
 
 
 // ЕТАП 2
@@ -47,7 +54,11 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-var gametype = prompt("Введіть тип видання гри")
+while(gametype = "deluxe" || "standart") {
+    
+}
+
+// var gametype = prompt("Введіть тип видання гри")
 
 switch(gametype) {
     case "deluxe":
@@ -60,8 +71,10 @@ switch(gametype) {
     case "standart":
     break;
     default: 
-    alert("Ви ввели неправильний тип гри")
+    prompt("Ви ввели неправильний тип гри. Спробуйте ще раз")
 }
+
+// alert("Ви ввели неправильний тип гри")
 
 var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
 var premiumFeaturesCost = [200, 400, 300]
@@ -77,3 +90,18 @@ var premiumNames = ["New skins", "50000 coins", "New weapon"];
 
 
 // ЕТАП 5
+
+let sum = 0;
+
+for (let i = 0; i < featuresCost.length; i++) {
+    sum += featuresCost.length
+}
+
+
+
+if(month > 12){
+    moneyMoney *= (1 + 15 / 100)
+}
+
+
+
