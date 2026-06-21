@@ -54,10 +54,10 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
-var premiumFeaturesCost = [200, 400, 300];
-var premiumBugs = [4, 2, 50];
-var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
+// var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
+// var premiumFeaturesCost = [200, 400, 300];
+// var premiumBugs = [4, 2, 50];
+// var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
 
 var gametype = prompt("Введіть тип видання гри").toLowerCase();
 
@@ -67,10 +67,10 @@ while(gametype !== "deluxe" && gametype !== "standart") {
 
 switch(gametype) {
     case "deluxe":
-        gameFeatures.concat(premiumfeatures);
-        featuresCost.concat(premiumFeaturesCost);
-        bugCounts.concat(premiumBugs);
-        displayNames.concat(premiumNames);
+        gameFeatures.splice(0, 0, "new skins", "50000 coins", "new weapon");
+        featuresCost.splice(0, 0, 200, 400, 300);
+        bugCounts.splice(0, 0, 4, 2, 50);
+        displayNames.splice(0, 0, "New Skins", "50000 Coins", "New Weapon");
     break;
 
     case "standart":
@@ -123,10 +123,13 @@ for (let i = 0; i < featuresCost.length; i++) {
 }
 
 
-
-if(month > 12){
-    moneyMoney *= (1 + 15 / 100)
+switch(month) {
+    case month >= 12:
+        moneyMoney *= 1.15
+    break;
+    case month <= 6:
+        moneyMoney *= 0.90
+    break;
 }
-
 
 
