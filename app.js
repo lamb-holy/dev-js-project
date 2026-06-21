@@ -79,13 +79,13 @@ switch(gametype) {
 
  
 // ЕТАП 4
-var index;
+var index = -1;
 
 
-while (true) {
+while (index === -1) {
     var gameFeaturesRow = gameFeatures.join(", ");
 
-    let deleted = prompt(`Видавництво піджимає! Виріжте одну з фіч: ${featureList}`);
+    var deleted = prompt(`Видавництво піджимає! Виріжте одну з фіч: ${gameFeaturesRow}`);
 
     index = gameFeatures.findIndex(feature => feature.toLowerCase() === deleted.toLowerCase());
 
