@@ -54,11 +54,9 @@ while (isNaN(month)) {
 
 // ЕТАП 3
 
-while(gametype = "deluxe" || "standart") {
-    
-}
 
-// var gametype = prompt("Введіть тип видання гри")
+
+var gametype = prompt("Введіть тип видання гри")
 
 switch(gametype) {
     case "deluxe":
