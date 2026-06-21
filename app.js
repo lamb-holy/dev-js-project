@@ -67,15 +67,17 @@ while(gametype !== "deluxe" && gametype !== "standart") {
 
 switch(gametype) {
     case "deluxe":
-        gameFeatures.splice(0, 0, "new skins", "50000 coins", "new weapon");
-        featuresCost.splice(0, 0, 200, 400, 300);
-        bugCounts.splice(0, 0, 4, 2, 50);
-        displayNames.splice(0, 0, "New Skins", "50000 Coins", "New Weapon");
+        gameFeatures.splice(3, 0, "new skins", "50000 coins", "new weapon");
+        featuresCost.splice(3, 0, 200, 400, 300);
+        bugCounts.splice(3, 0, 4, 2, 50);
+        displayNames.splice(3, 0, "New Skins", "50000 Coins", "New Weapon");
     break;
 
     case "standart":
     break;
 }
+
+
 
  
 // ЕТАП 4
@@ -129,12 +131,12 @@ switch(month) {
 var finMoney = moneyMoney - (moneyMoney - sum)
 
 var finish = alert(
-"🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam." +
-"📋 Patch Notes" +
-"• Покращена система бою — ціна: 120 монет, багів: 2" +
-"• Нові сюжетні місії — ціна: 200 монет, багів: 1" +
-"• Режим кооперативної гри — ціна: 150 монет, багів: 3" +
-"• Набір ексклюзивних скінів (Deluxe) — ціна: 80 монет, багів: 0" +
-"• Додаткові карти (Deluxe) — ціна: 100 монет, багів: 1" +
-"Дякуємо за підтримку та бажаємо приємної гри!"
+`🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
+`📋 Patch Notes\n\n` +
+`• Нові лутбокси!  — ціна: ${featuresCost[0]}, багів: 2\n` +
+`• Грайте з другом! — ціна: ${featuresCost[1]}, багів: 1\n` +
+`• Режим кооперативної гри — ціна: ${featuresCost[2]}, багів: 3\n` +
+`• Набір ексклюзивних скінів (Deluxe) — ціна: ${featuresCost[3]}, багів: 0\n` +
+`• Додаткові карти (Deluxe) — ціна: 100 монет, багів: 1\n\n` +
+`Дякуємо за підтримку та бажаємо приємної гри!`
 );
