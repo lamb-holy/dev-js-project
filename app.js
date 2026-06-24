@@ -1,8 +1,6 @@
-// ЕТАП 1
 var gameFeatures = ["loot boxes", "multiplayer", "story mode"];
 var featuresCost = [200, 600, 400];
 var bugCounts = [12, 45, 8];
-
 
 for (let i = 0; i < bugCounts.length; i++) {
     if (bugCounts[i] > 30) {
@@ -12,24 +10,18 @@ for (let i = 0; i < bugCounts.length; i++) {
     }
 }
 
-
-// ЕТАП 2
-
-// назва студії
 var studioName = prompt("Введіть назву вашої GameDev студії");
 
 while (studioName.length < 3) {
     studioName = prompt("Замало символів. Введіть назву ще раз");
 }
 
-// назва гри
 var gameName = prompt("Яку гру ви хочете створити?");
 
 while (gameName.length < 5) {
     gameName = prompt("Замало символів. Введіть назву гри ще раз.");
 }
 
-// бюджет
 var moneyMoney = Number(prompt("Який у вас бюджет?"));
 
 while (isNaN(moneyMoney)) {
@@ -38,19 +30,11 @@ while (isNaN(moneyMoney)) {
 
 alert(`Ваш бюджет: $${moneyMoney}`);
 
-console.log(moneyMoney);
-
-// термін
 var month = Number(prompt("Скільки місяців триватиме створення гри?"));
 
 while (isNaN(month)) {
     month = Number(prompt("Помилка: використовуйте лише цифри."));
 }
-
-
-// ЕТАП 3
-
-
 
 var gametype = prompt("Введіть тип видання гри").toLowerCase();
 
@@ -63,17 +47,12 @@ switch (gametype) {
         gameFeatures.push("new skins", "+50.000 coins", "new weapon");
         featuresCost.push(200, 400, 300);
         bugCounts.push(4, 2, 50);
-        // displayNames.push("New Skins", "+50.000 Coins", "New Weapon");
         break;
 
     case "standart":
         break;
 }
 
-
-
-
-// ЕТАП 4
 var index = -1;
 
 while (index === -1) {
@@ -97,20 +76,10 @@ console.log(bugCounts);
 
 alert(`У вас залишились: ${gameFeatures.join(", ")}.`);
 
-
-
-
-// ЕТАП 5
-
-
-
-console.log("фічі" + featuresCost.length)
-
 let sum = 0;
 for (let i = 0; i < featuresCost.length; i++) {
     sum += featuresCost[i];
 }
-
 
 if (month > 12) {
     sum *= 1.15;
@@ -118,20 +87,7 @@ if (month > 12) {
     sum *= 0.90; 
 }
 
-
-
 var rest = moneyMoney - sum;
-
-
-console.log("зал" + rest)
-
-
-
-
-
-console.log("sum:" + sum)
-
-
 
 if (rest > 0) {
     if (gametype === "deluxe") {
@@ -157,4 +113,3 @@ if (rest > 0) {
 } else {
     alert(`Нажаль ваша компанія стала банкрутом`)
 }
-
