@@ -108,6 +108,10 @@ for (let i = 0; i < featuresCost.length; i++) {
     sum += featuresCost.length
 }
 
+console.log(sum)
+
+var finMoney = moneyMoney - (moneyMoney - sum)
+
 // Фактор часу
 
 switch(month) {
@@ -119,7 +123,7 @@ switch(month) {
     break;
 }
 
-var finMoney = moneyMoney - (moneyMoney - sum)
+
 
 if(gametype === "deluxe") {
     alert(
@@ -141,3 +145,10 @@ if(gametype === "deluxe") {
 ); 
 }
 
+// банкрyт
+
+if (finMoney <= 0){
+    alert(`Нажаль ваша компанія стала банкрутом`)
+} else {
+    alert(`Вітаємо з вдалим випуском гри!`)
+}
