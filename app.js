@@ -2,14 +2,13 @@
 var gameFeatures = ["loot boxes", "multiplayer", "story mode"];
 var featuresCost = [200, 600, 400];
 var bugCounts = [12, 45, 8];
-var displayNames = ["Loot Boxes", "Multiplayer", "Story Mode"];
+// var displayNames = ["Loot Boxes", "Multiplayer", "Story Mode"];
 
 for(let i = 0; i < bugCounts.length; i++) {
     if(bugCounts[i] > 30) {
         gameFeatures.slice(i, 1)
         featuresCost.slice(i, 1)
         bugCounts.slice(i, 1)
-        displayNames.slice(i, 1)
     }
 }
 
@@ -47,17 +46,9 @@ while (isNaN(month)) {
 }
 
 
-
-// do {
-//     gameName = prompt("Як називатиметься ваша гра?");
-// } while (gameName.length < 2);
-
 // ЕТАП 3
 
-// var premiumfeatures = ["new skins", "50000 coins", "new weapon"];
-// var premiumFeaturesCost = [200, 400, 300];
-// var premiumBugs = [4, 2, 50];
-// var premiumNames = ["New Skins", "50000 Coins", "New Weapon"];
+
 
 var gametype = prompt("Введіть тип видання гри").toLowerCase();
 
@@ -67,10 +58,10 @@ while(gametype !== "deluxe" && gametype !== "standart") {
 
 switch(gametype) {
     case "deluxe":
-        gameFeatures.splice(3, 0, "new skins", "50000 coins", "new weapon");
-        featuresCost.splice(3, 0, 200, 400, 300);
-        bugCounts.splice(3, 0, 4, 2, 50);
-        displayNames.splice(3, 0, "New Skins", "50000 Coins", "New Weapon");
+        gameFeatures.push("new skins", "+50.000 coins", "new weapon");
+        featuresCost.push(200, 400, 300);
+        bugCounts.push(4, 2, 50);
+        // displayNames.push("New Skins", "+50.000 Coins", "New Weapon");
     break;
 
     case "standart":
@@ -130,13 +121,23 @@ switch(month) {
 
 var finMoney = moneyMoney - (moneyMoney - sum)
 
-var finish = alert(
+if(gametype === "deluxe") {
+    alert(
 `🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
 `📋 Patch Notes\n\n` +
-`• Нові лутбокси!  — ціна: ${featuresCost[0]}, багів: 2\n` +
-`• Грайте з другом! — ціна: ${featuresCost[1]}, багів: 1\n` +
-`• Режим кооперативної гри — ціна: ${featuresCost[2]}, багів: 3\n` +
-`• Набір ексклюзивних скінів (Deluxe) — ціна: ${featuresCost[3]}, багів: 0\n` +
-`• Додаткові карти (Deluxe) — ціна: 100 монет, багів: 1\n\n` +
+`•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
+`•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n` +
+`•${gameFeatures[2]}, ${featuresCost[2]}, ${bugCounts[2]} \n` +
+`•${gameFeatures[3]}, ${featuresCost[3]}, ${bugCounts[3]} \n` +
+`•${gameFeatures[4]}, ${featuresCost[4]}, ${bugCounts[4]} \n\n` +
 `Дякуємо за підтримку та бажаємо приємної гри!`
-);
+); } else {
+    alert(
+`🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
+`📋 Patch Notes\n\n` +
+`•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
+`•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n\n` +
+`Дякуємо за підтримку та бажаємо приємної гри!`
+); 
+}
+
