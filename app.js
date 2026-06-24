@@ -2,10 +2,10 @@
 var gameFeatures = ["loot boxes", "multiplayer", "story mode"];
 var featuresCost = [200, 600, 400];
 var bugCounts = [12, 45, 8];
-// var displayNames = ["Loot Boxes", "Multiplayer", "Story Mode"];
 
-for(let i = 0; i < bugCounts.length; i++) {
-    if(bugCounts[i] > 30) {
+
+for (let i = 0; i < bugCounts.length; i++) {
+    if (bugCounts[i] > 30) {
         gameFeatures.slice(i, 1)
         featuresCost.slice(i, 1)
         bugCounts.slice(i, 1)
@@ -38,6 +38,8 @@ while (isNaN(moneyMoney)) {
 
 alert(`Ваш бюджет: $${moneyMoney}`);
 
+console.log(moneyMoney);
+
 // термін
 var month = Number(prompt("Скільки місяців триватиме створення гри?"));
 
@@ -52,25 +54,25 @@ while (isNaN(month)) {
 
 var gametype = prompt("Введіть тип видання гри").toLowerCase();
 
-while(gametype !== "deluxe" && gametype !== "standart") {
-        gametype = prompt("Ви ввели неправильний тип гри. Спробуйте ще раз")
-    }
+while (gametype !== "deluxe" && gametype !== "standart") {
+    gametype = prompt("Ви ввели неправильний тип гри. Спробуйте ще раз")
+}
 
-switch(gametype) {
+switch (gametype) {
     case "deluxe":
         gameFeatures.push("new skins", "+50.000 coins", "new weapon");
         featuresCost.push(200, 400, 300);
         bugCounts.push(4, 2, 50);
         // displayNames.push("New Skins", "+50.000 Coins", "New Weapon");
-    break;
+        break;
 
     case "standart":
-    break;
+        break;
 }
 
 
 
- 
+
 // ЕТАП 4
 var index = -1;
 
@@ -100,55 +102,59 @@ alert(`У вас залишились: ${gameFeatures.join(", ")}.`);
 
 // ЕТАП 5
 
-// сума вартості всіх фіч, що залишилися
+
+
+console.log("фічі" + featuresCost.length)
 
 let sum = 0;
-
 for (let i = 0; i < featuresCost.length; i++) {
-    sum += featuresCost.length
+    sum += featuresCost[i];
 }
 
-console.log(sum)
 
-var finMoney = moneyMoney - (moneyMoney - sum)
-
-// Фактор часу
-
-switch(month) {
-    case month >= 12:
-        moneyMoney *= 1.15
-    break;
-    case month <= 6:
-        moneyMoney *= 0.90
-    break;
+if (month > 12) {
+    sum *= 1.15;
+} else if (month < 6) {
+    sum *= 0.90; 
 }
 
 
 
-if(gametype === "deluxe") {
-    alert(
-`🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
-`📋 Patch Notes\n\n` +
-`•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
-`•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n` +
-`•${gameFeatures[2]}, ${featuresCost[2]}, ${bugCounts[2]} \n` +
-`•${gameFeatures[3]}, ${featuresCost[3]}, ${bugCounts[3]} \n` +
-`•${gameFeatures[4]}, ${featuresCost[4]}, ${bugCounts[4]} \n\n` +
-`Дякуємо за підтримку та бажаємо приємної гри!`
-); } else {
-    alert(
-`🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
-`📋 Patch Notes\n\n` +
-`•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
-`•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n\n` +
-`Дякуємо за підтримку та бажаємо приємної гри!`
-); 
-}
+var rest = moneyMoney - sum;
 
-// банкрyт
 
-if (finMoney <= 0){
-    alert(`Нажаль ваша компанія стала банкрутом`)
+console.log("зал" + rest)
+
+
+
+
+
+console.log("sum:" + sum)
+
+
+
+if (rest > 0) {
+    if (gametype === "deluxe") {
+        alert(
+            `🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
+            `📋 Patch Notes\n\n` +
+            `•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
+            `•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n` +
+            `•${gameFeatures[2]}, ${featuresCost[2]}, ${bugCounts[2]} \n` +
+            `•${gameFeatures[3]}, ${featuresCost[3]}, ${bugCounts[3]} \n` +
+            `•${gameFeatures[4]}, ${featuresCost[4]}, ${bugCounts[4]} \n\n` +
+            `Дякуємо за підтримку та бажаємо приємної гри!`
+        );
+    } else if(gametype === "standart") {
+        alert(
+            `🎮 Реліз відбувся! Наша гра офіційно стала доступною у Steam.\n\n` +
+            `📋 Patch Notes\n\n` +
+            `•${gameFeatures[0]}, ${featuresCost[0]}, ${bugCounts[0]} \n` +
+            `•${gameFeatures[1]}, ${featuresCost[1]}, ${bugCounts[1]} \n\n` +
+            `Дякуємо за підтримку та бажаємо приємної гри!`
+        );
+    } 
 } else {
-    alert(`Вітаємо з вдалим випуском гри!`)
+    alert(`Нажаль ваша компанія стала банкрутом`)
 }
+
